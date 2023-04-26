@@ -1,6 +1,8 @@
 name: PR Review Request
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     types: [ opened, reopened ]
 
@@ -51,12 +53,10 @@ jobs:
                 },
                 {
                   "type": "section",
-                  "text": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*PR 제목*\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>"
-                    }
-                  ]
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*PR 제목*\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>"
+                  }
                 },
                 {
                   "type": "section",
