@@ -1,8 +1,6 @@
 name: PR Review Request
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     types: [ opened, reopened ]
 
@@ -67,7 +65,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers*\n${{ steps.variables.outputs.reviewers }}"
+                      "text": "${{ steps.variables.outputs.reviewers }}"
                     }
                   ]
                 }
