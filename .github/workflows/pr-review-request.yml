@@ -1,13 +1,15 @@
 name: PR Review Request
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     types: [ opened, reopened ]
 
 jobs:
   pr-review-request:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.body, '/s ')
+#     if: contains(github.event.pull_request.body, '/s ')
     steps:
       - name: Set Reviewers
         id: variables
